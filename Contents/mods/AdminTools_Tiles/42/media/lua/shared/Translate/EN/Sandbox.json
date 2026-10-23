@@ -1,0 +1,6 @@
+{
+    "Sandbox_AdminTools_Tiles_ItemsAndEdits": "AdminTools_Tiles Items and Edits",
+    "Sandbox_AdminTools_Tiles_ItemsAndEdits_Debug": "Enable Debug Logging",
+    "Sandbox_AdminTools_Tiles_LootFillerBlacklist": "Loot Filler blacklist",
+    "Sandbox_AdminTools_Tiles_LootFillerBlacklist_tooltip": "Item types the Loot Filler never spawns, whatever the source (picked items, vanilla reroll, random by container type) or item list.\\nFull types, bare names or whole modules, separated by ; e.g. Base.Katana;Sledgehammer;SWMG.*\\nA bare name matches that item in any module, Module.* every item of that module."
+}

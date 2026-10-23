@@ -1,0 +1,9 @@
+VERSION = 1,
+
+option AdminTools_Tiles.LootFillerBlacklist
+{
+    type = string,
+    default = ,
+    page = AdminTools_Tiles,
+    translation = AdminTools_Tiles_LootFillerBlacklist,
+}

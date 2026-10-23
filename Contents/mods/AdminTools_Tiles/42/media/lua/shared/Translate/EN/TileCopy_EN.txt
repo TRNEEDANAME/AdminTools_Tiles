@@ -1,0 +1,8 @@
+TileCopy_EN = {
+    UI_TileCopy_Title = "Tile Copy Tool (Admin)",
+    UI_TileCopy_ContextMenu = "Tile Copy Tool",
+    UI_TileCopy_SelectArea = "1. Select Area",
+    UI_TileCopy_CopySelection = "2. Copy Selection",
+    UI_TileCopy_PasteSelected = "3. Paste Selected",
+    UI_TileCopy_NoAdmin = "You need admin rights to use the Tile Copy tool.",
+}
