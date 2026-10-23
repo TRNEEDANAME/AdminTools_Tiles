@@ -741,11 +741,12 @@ end
 
 --- The object a record changed / added, or nil when it's gone (removing one
 --- part of a multi-tile object can take the other parts with it).
+--- When the object itself isn't there any more, a copy with the same sprite
+--- stands for it: a later change took it out and its undo put a new one back
+--- (a swap run twice, undone twice).
 local function recordObject(item, obj)
     local objs = item.square:getObjects()
-    if not item.stale then
-        return objs:contains(obj) and obj or nil
-    end
+    if not item.stale and objs:contains(obj) then return obj end
     for i = objs:size() - 1, 0, -1 do
         local other = objs:get(i)
         if getSpriteNameSafe(other) == item.sprite then return other end

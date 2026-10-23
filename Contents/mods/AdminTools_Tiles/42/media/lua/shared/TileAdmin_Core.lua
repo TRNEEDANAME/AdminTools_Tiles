@@ -715,12 +715,14 @@ end
 --   action = "swap" | "overlay" | "place" | "remove"
 --   sprites = { names }   one is picked at random each time. In a swap,
 --                         Admin.BURNT_TILE means the tile's own burnt version
---                         (for a fence without one: the burnt fence that fits it),
+--                         (for a fence without one: the burnt fence that fits it;
+--                         a tile that's already burnt is its own burnt version),
 --   chance = 0-100        percent of matching tiles it applies to
 --   where  = nil | "inside" | "outside"
 --
 -- Rules run top to bottom on every tile. A tile is swapped / removed by the
--- first such rule that applies
+-- first such rule that applies. A swap that picks the sprite the tile already
+-- has applies too: the tile stays as it is
 
 Admin.BURNT_TILE = "@BurntTile"
 
@@ -807,8 +809,7 @@ end
 --- The burnt fence that fits a fence with no burnt version of its own: same
 --- material, height and side. nil when it isn't a fence or none fits.
 local function burntFence(obj, props)
-    local name = Core.getSpriteName(obj)
-    if not name or name:sub(1, 14) == "fencing_burnt_" then return nil end
+    if not Core.getSpriteName(obj) then return nil end
 
     local has = Core.hasPropertyFlag
     local tall = has(obj, { "TallHoppableW", "TallHoppableN" }) or propValue(props, "FenceTypeHigh") ~= ""
@@ -842,6 +843,10 @@ local function pickSprite(rule, obj)
     if not sprites or #sprites == 0 then return nil end
     local name = sprites[ZombRand(#sprites) + 1]
     if name == Admin.BURNT_TILE then
+        -- already burnt (burnt fence, wall, floor, pile of ash): it stays
+        -- as it is, instead of falling through to the generic burnt tiles
+        local own = Core.getSpriteName(obj)
+        if own and own:find("burnt", 1, true) then return own end
         local sprite = obj:getSprite()
         local props = sprite and sprite:getProperties()
         name = props and props:get("BurntTile")
@@ -963,6 +968,9 @@ local function swapBlocks(blocks, z1, z2, preset, applied, result)
                                     end
                                     break -- the matched object is gone
                                 end
+                            elseif target then
+                                -- already what the rule wants
+                                replaced = true
                             end
                         elseif action == "remove" then
                             -- a removed floor is a hole: that's the Tile Remover's job
