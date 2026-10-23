@@ -1,16 +1,12 @@
 [h1] Admin Tools Tiles [/h1]
 
-Adds some admin tools that I feel are *needed*
+Adds some admin tools that I feel are [i]needed[/i]
 
 [h2] Tools [/h2]
 
-
-[h3] Tiles[/h3]
-
-
 [h3] Tile Copy[/h3]
 
-Basically my [Tile Copy](https://steamcommunity.com/sharedfiles/filedetails/?id=3808514150) mod
+Basically my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3808514150]Tile Copy[/url] mod
 
 [list]
 [*]Copy a set of tiles
@@ -26,7 +22,6 @@ Create a set of rules (preset) that allows you to swap tiles around (grass floor
 [*]Include a burnt / 10Y later (light), True 10Y later (destroy some wall tiles & more vegetation), Burnt and Bloody tile preset
 [*]Share your preset as a string
 [*]Undo your changes (up to 20 swaps)
-[*]Zone Editor (allow you to swap the whole map) with a "load" feature (tp your character every few tiles to load them)
 [*]Floor select (can go from -32 to +32 floors)
 [*]The tile swap window support tile search (for the swapping & swapped tiles)
 [*]Tile Picker for the tile to swap from and to.
@@ -54,6 +49,21 @@ A "Building" mode in the Zone Editor (in the right-click menu in single player)
 [*]Copy House / Paste House
 [/list]
 
+[h3]Zone Editor: Swap[/h3]
+
+A "Swap" mode in the Zone Editor (in the right-click menu in single player)
+
+[list]
+[*]Tile swap, in a big zone (include a "load" feature that teleports the admin around)
+[/list]
+
+[h3]Zone Editor: Loot[/h3]
+
+A "Loot" mode in the Zone Editor (in the right-click menu in single player)
+
+[list]
+[*]Loot filler / delete in a big zone
+[/list]
 
 [h3]Brush Tool[/h3]
 
@@ -65,8 +75,6 @@ A better brush tool
 [*]Favoutite tiles (stays in a .txt so it's always present)
 [*]Bigger tile preview
 [/list]
-
-[h3] Loot[/h3]
 
 [h3]Loot Filler[/h3]
 
@@ -99,3 +107,10 @@ Destroy a car via a slider
 [list]
 [*]Right click a car -> Destroy car -> Select % -> ???? -> Profit (note that parts may be destroyed or removed)
 [/list]
+
+AI was used for some part (finding the UI & functions / writing comments) but it was tested extensively in SP and MP for months, most of the code is hand written.
+
+If you want to support me and fuel my bread addiction I have a [url=https://ko-fi.com/trneedaname]Ko-fi[/url], it is not needed to send anything, all my mods will always be free to use.
+
+Workshop ID: 3825210643
+Mod ID: AdminTools_Tiles
